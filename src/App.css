@@ -25,7 +25,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: "white";
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +35,30 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.pText {
+  background-color: black;
+  color: #fff;
+  margin: "20px";
+}
+
+.col-sm-2 > img {
+  width: 100%;
+}
+
+#cardDiv {
+  padding: 50px 0;
+}
+
+.nav-item {
+  color: "white !important";
+}
+
+.col {
+  margin: 10px 0px;
+}
+
+.ftr {
+  margin-top: "300px";
 }
