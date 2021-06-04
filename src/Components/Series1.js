@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "./compo";
 
 function Series1() {
   const [year, setyear] = useState(2014);
@@ -20,19 +21,7 @@ function Series1() {
   return (
     <div>
       <div className="container-fluid">
-        <h2
-          style={{
-            backgroundColor: "#414141",
-            color: "white",
-            textAlign: "center",
-            padding: "10px",
-            marginBottom: "10px 0px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          Populer Series
-        </h2>
+        <Header name="Populer Series" />
       </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <h2>Sort</h2>

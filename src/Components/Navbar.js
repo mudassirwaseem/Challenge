@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
+import axios from "axios";
 
 function Navbar() {
+  const [data, setdata] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://mumer01.github.io/publicApis/BoxOffice.json")
+      .then((res) => {
+        console.log(res.data.entries);
+        setdata(res.data.entries);
+      })
+      .catch((err) => {
+        console.log(err.data);
+      });
+  }, []);
+
+  console.log("data===>", data);
+
   return (
     <div className="container-fluid ">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary m-0">
@@ -23,12 +40,28 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav ml-auto" style={{ marginLeft: "auto" }}>
               <li className="nav-item ">
-                <NavLink to="/" className="nav-link">
+                <NavLink
+                  to={{
+                    pathname: "/",
+                    aboutprops: {
+                      alldata: data,
+                    },
+                  }}
+                  className="nav-link"
+                >
                   Home
                 </NavLink>
               </li>
               <li className="nav-item ">
-                <NavLink to="/Series" className="nav-link">
+                <NavLink
+                  to={{
+                    pathname: "/Series",
+                    aboutprops: {
+                      alldata: data,
+                    },
+                  }}
+                  className="nav-link"
+                >
                   Series
                 </NavLink>
               </li>

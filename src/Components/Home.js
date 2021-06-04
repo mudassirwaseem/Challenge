@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "./compo";
 
 function Home() {
   const [data, setdata] = useState([]);
@@ -19,7 +20,7 @@ function Home() {
   return (
     <div>
       <div className="container-fluid ">
-        <h2
+        {/* <h2
           style={{
             backgroundColor: "#414141",
             color: "white",
@@ -31,8 +32,8 @@ function Home() {
           }}
         >
           Home
-        </h2>
-
+        </h2> */}
+        <Header name="Home" />
         <div className="container">
           <div className="row">
             {data.map((Alldata, index) => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "./compo";
 
 import { BrowserRouter as Router, Link } from "react-router-dom";
 
@@ -21,19 +22,7 @@ function Movies() {
   return (
     <div>
       <div className="container-fluid">
-        <h2
-          style={{
-            backgroundColor: "#414141",
-            color: "white",
-            textAlign: "center",
-            padding: "10px",
-            marginBottom: "10px 0px",
-            display: "flex",
-            justifyContent: "center",
-          }}
-        >
-          Populer Movies
-        </h2>
+        <Header name="Populer Movies" />
       </div>
 
       <div className="container">
